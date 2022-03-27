@@ -16,6 +16,9 @@
   <div class="footer">
     <router-link to="/admin">Admin</router-link>
   </div>
+  <div class="footer">
+      <footer><a href="https://github.com/BYUCS260/museum-bownej.git">GitHub</a></footer>
+    </div>
 </div>
 </template>
 
