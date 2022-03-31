@@ -3,18 +3,21 @@
   <div class="header">
     <router-link to="/">
       <div class="logo">
-        <img src="/ordinary.png">
+        <img src="/pokeball.jpg" id="logo">
       </div>
     </router-link>
     <div class="title">
-      <h1>Museum of Ordinary Objects</h1>
+      <h1>Pokemon Team Builder</h1>
     </div>
   </div>
   <div class="content">
     <router-view />
   </div>
   <div class="footer">
-    <router-link to="/admin">Admin</router-link>
+    <router-link to="/">Team</router-link>
+  </div>
+  <div class="footer">
+    <router-link to="/admin">Team Builder</router-link>
   </div>
   <div class="footer">
       <footer><a href="https://github.com/BYUCS260/museum-bownej.git">GitHub</a></footer>
@@ -30,7 +33,7 @@ html {
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
-  background: #fff;
+  background: rgb(255, 255, 116);
   padding: 0px;
   margin: 0px;
 }
@@ -39,12 +42,14 @@ body {
 .header {
   display: flex;
   padding: 10px 100px 0px 100px;
-  background-color: #5BDEFF;
+  background-color: #fff;
   color: #1C454F;
+  justify-content: center;
 }
 
 .title {
   margin-top: 5px;
+  color: red;
 }
 
 .title h1 {
@@ -56,12 +61,18 @@ body {
   min-height: 500px;
 }
 
+#logo {
+  width: 100px;
+  height: 100px;
+}
+
 /* Footer */
 .footer {
   height: 50px;
   padding: 20px 100px 0px 100px;
-  background: #e3e3e3;
-  font-size: 12px;
+  background:rgb(255, 59, 59);
+  font-size: 20px;
+  text-align: center;
 }
 
 .footer a {

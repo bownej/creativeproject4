@@ -2,7 +2,9 @@
 <div class="home">
   <section class="image-gallery">
     <div class="image" v-for="item in items" :key="item.id">
-      <h2>{{item.title}}</h2>
+      <h1>{{item.title}}</h1>
+      <h2>{{item.name}}</h2>
+      <h2>Pokedex Number: {{item.index}}</h2>
       <img :src="item.path" />
     </div>
   </section>
@@ -50,30 +52,34 @@ export default {
 }
 
 .image-gallery {
-  column-gap: 1.5em;
+  column-gap: 1em;
+  
 }
 
 .image {
-  margin: 0 0 1.5em;
+  margin: 0 0 1em;
   display: inline-block;
   width: 100%;
+  /*justify-content: center;
+  align-content: center;*/
+  text-align: center;
 }
 
 .image img {
-  width: 100%;
+  width: 25%;
 }
 
 /* Masonry on large screens */
 @media only screen and (min-width: 1024px) {
   .image-gallery {
-    column-count: 4;
+    column-count: 2;
   }
 }
 
 /* Masonry on medium-sized screens */
 @media only screen and (max-width: 1023px) and (min-width: 768px) {
   .image-gallery {
-    column-count: 3;
+    column-count: 2;
   }
 }
 

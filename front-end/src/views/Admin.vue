@@ -1,13 +1,16 @@
 <template>
 <div class="admin">
-  <h1>The Admin Page!</h1>
+  <h1>Team Builder Page!</h1>
     <div class="heading">
-      <div class="circle">1</div>
-      <h2>Add an Item</h2>
+      <h2>Add a Pokemon</h2>
     </div>
     <div class="add">
       <div class="form">
-        <input v-model="title" placeholder="Title">
+        <input v-model="title" placeholder="Name">
+        <br/>
+        <input v-model="name" placeholder="Pokemon">
+        <br/>
+        <input v-model="index" placeholder="Pokedex Number">
         <p></p>
         <input type="file" name="photo" @change="fileChanged">
         <button @click="upload">Upload</button>
@@ -18,8 +21,7 @@
       </div>
     </div>
     <div class="heading">
-      <div class="circle">2</div>
-      <h2>Edit/Delete an Item</h2>
+      <h2>Change Name OR Delete a Pokemon</h2>
     </div>
     <div class="edit">
       <div class="form">
@@ -53,11 +55,18 @@
   display: flex;
   margin-bottom: 20px;
   margin-top: 20px;
+  font-size: 50px;
+}
+
+.admin h1 {
+  color: red;
 }
 
 .heading h2 {
   margin-top: 8px;
-  margin-left: 10px;
+  
+  font-size: 35px;
+  color: red;
 }
 
 .add,
@@ -141,6 +150,8 @@ export default {
         let r1 = await axios.post('/api/photos', formData);
         let r2 = await axios.post('/api/items', {
           title: this.title,
+          name: this.name,
+          index: this.index,
           path: r1.data.path
         });
         this.addItem = r2.data;
